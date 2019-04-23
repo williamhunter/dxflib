@@ -1,0 +1,52 @@
+999
+A hand coded DXF file by W Hunter
+0
+SECTION
+2
+ENTITIES
+0
+LINE
+8
+First Line Black
+62
+2
+10
+0.0
+20
+0.0
+11
+5.5
+21
+2.1
+0
+LINE
+8
+Second Line Cyan
+62
+4
+10
+5.5
+20
+2.1
+11
+3.2
+21
+4.8
+0
+LINE
+8
+Third Line Magenta
+62
+6
+10
+3.2
+20
+4.8
+11
+0.0
+21
+0.0
+0
+ENDSEC
+0
+EOF

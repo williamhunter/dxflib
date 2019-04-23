@@ -1,0 +1,4 @@
+= DXFLib
+
+A C library to create simple DXF files in R12 format (entities only),
+with Pascal (and perhaps Python, if I feel like it) bindings.

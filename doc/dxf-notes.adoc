@@ -1,0 +1,199 @@
+= Introduction
+
+====
+This is a summary of the key concepts in *AutoCAD 2012 DXF Reference (February 2011)* 
+to get one started in creating basic entities (e.g., lines and arcs) in DXF format.
+====
+
+== Minimal DXF file
+
+Essentially, a DXF file is composed of pairs of codes and associated values. The
+codes, known as group codes, indicate the type of value that follows. Using these
+group code and value pairs, a DXF file is organized into sections composed of
+records, which are composed of a group code and a data item. Each group code
+and value are on their own line in the DXF file, as in
+
+[source, text, numbered]
+----
+<group code>
+<value>
+----
+
+Each section starts with a group code 0 followed by the string SECTION. This
+is followed by a group code 2 and a string indicating the name of the section
+(for example, HEADER, ENTITIES, BLOCKS, etc).
+Each section is composed of group codes and values
+that define its elements.
+
+A section ends with a 0 followed by the string ENDSEC.
+
+A DXF file must end with an EOF record:
+
+[source, text, numbered]
+----
+0
+EOF
+----
+
+The following is a HEADER section only, but does not constitute a valid DXF file.
+
+[source, text, numbered]
+----
+0
+SECTION
+2
+HEADER
+0
+ENDSEC
+----
+
+=== Skeleton DXF file for ENTITIES only
+
+A blank DXF file that will open, but no geometry will show on the screen because no
+ENTITIES are defined.
+[source, text]
+----
+0
+SECTION
+2
+ENTITIES
+0
+ENDSEC
+0
+EOF
+----
+
+=== A 2D line
+
+Here is a complete minimal DXF file with an ENTITIES section only. It defines a line in 2D.
+If a DXF file contains an
+ENTITIES section only (which is allowed and valid), it presents AutoCAD R11 and R12 data. 
+
+[source, text, numbered]
+----
+0
+SECTION
+2
+ENTITIES
+0
+LINE
+10
+0.58
+20
+1.65
+11
+10.47
+21
+21.19
+0
+ENDSEC
+0
+EOF
+----
+
+==== Explanation of LINE group codes
+
+A record is a <group code> and <value>, each on their own line.
+
+`10` = start of line X-coordinate, `0.58` is the value
+
+`20` = start of line Y-coordinate, `1.65` is the value
+
+`11` = end of line X-coordinate, `10.47` is the value
+
+`21` = end of line Y-coordinate, `21.19` is the value
+
+
+== A 2D triangle
+Defined by the following points: (0.0; 0.0), (5.5; 2.1) and (3.2; 4.8):
+[source, text]
+----
+0
+SECTION
+2
+ENTITIES
+0
+LINE
+10
+0.0
+20
+0.0
+11
+5.5
+21
+2.1
+0
+LINE
+10
+5.5
+20
+2.1
+11
+3.2
+21
+4.8
+0
+LINE
+10
+3.2
+20
+4.8
+11
+0.0
+21
+0.0
+0
+ENDSEC
+0
+EOF
+----
+
+== A 2D line with layer name, colour and some metadata
+
+[source, text]
+----
+999
+A hand coded DXF file of a line from (0,0) to (7,11) by W Hunter
+0
+SECTION
+2
+HEADER
+9
+$ACADVER
+1
+AC1009
+0
+ENDSEC
+0
+SECTION
+2
+ENTITIES
+0
+LINE
+8
+A Layer Name
+62
+4
+10
+0.0
+20
+0.0
+11
+7.0
+21
+11.0
+0
+ENDSEC
+0
+EOF
+----
+
+=== Explanation of group codes and values
+
+`999` = A comment group code, the next line is the comment
+
+`AC1009` = AutoCAD drawing database version number: R11 and R12
+
+`8` = A layer group code, the name of the layer is on the next line
+
+`62` = A colour group code, the colour is on the next line
