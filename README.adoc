@@ -1,7 +1,8 @@
 = DXFLib
 
-TODO: A C library to create simple DXF files in R12 format (entities only),
-with Pascal (and perhaps Python, if I feel like it) bindings.
+Nothing here yet, except an explanation of what a DXF consists of, see the docs folder (linked below).
+
+TODO: A minimalist C library to create simple DXF files in R12 format (entities only).
 
 == Docs
-Refer to the https://github.com/williamhunter/dxflib/blob/master/doc[doc] folder for now, it gives enough info to "type out" a DXF file
+Refer to the https://github.com/williamhunter/dxflib/blob/master/doc[doc] folder for now, it gives enough info to "hard code"/type out a DXF file.
