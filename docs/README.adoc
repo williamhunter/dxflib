@@ -10,7 +10,7 @@ to get one started in creating basic entities (e.g., lines and arcs) in DXF form
 Essentially, a DXF file is composed of pairs of codes and associated values. The
 codes, known as group codes, indicate the type of value that follows. Using these
 group code and value pairs, a DXF file is organized into sections composed of
-records, which are composed of a group code and a data item. Each group code
+records, which are composed of a <group code> followed by a <value>. Each group code
 and value are on their own line in the DXF file, as in
 
 [source, text, numbered]
@@ -47,9 +47,9 @@ HEADER
 ENDSEC
 ----
 
-=== Skeleton DXF file for ENTITIES only
+=== A skeleton DXF file for ENTITIES only
 
-This is a blank DXF file that will open, but no geometry will show on the screen because no
+This is a valid blank DXF file that will open, but no geometry will show on the screen because no
 ENTITIES are defined.
 [source, text]
 ----
