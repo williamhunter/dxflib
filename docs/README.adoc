@@ -19,7 +19,7 @@ and value are on their own line in the DXF file, as in
 <value>
 ----
 
-Each section starts with a group code 0 followed by the string SECTION. This
+Each section starts with a group code 0 followed by a string, SECTION. This
 is followed by a group code 2 and a string indicating the name of the section
 (for example, HEADER, ENTITIES, BLOCKS, etc).
 Each section is composed of group codes and values
@@ -35,7 +35,7 @@ A DXF file must end with an EOF record:
 EOF
 ----
 
-The following is a HEADER section only, but does not constitute a valid DXF file.
+The following is a HEADER section only, it does not constitute a valid DXF file.
 
 [source, text, numbered]
 ----
@@ -49,7 +49,7 @@ ENDSEC
 
 === Skeleton DXF file for ENTITIES only
 
-A blank DXF file that will open, but no geometry will show on the screen because no
+This is a blank DXF file that will open, but no geometry will show on the screen because no
 ENTITIES are defined.
 [source, text]
 ----
