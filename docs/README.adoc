@@ -7,11 +7,12 @@ to get one started in creating basic entities (e.g., lines and arcs) in DXF form
 
 == Minimal DXF file
 
-Essentially, a DXF file is composed of pairs of codes and associated values. The
-codes, known as group codes, indicate the type of value that follows. Using these
+Essentially, a DXF file is composed of pairs of *group codes* and associated *values*
+that together form *records*.
+
+The *group codes* indicate the type of *value* that follows. Using these
 group code and value pairs, a DXF file is organized into sections composed of
-records, which are composed of a <group code> followed by a <value>. Each group code
-and value are on their own line in the DXF file, as in
+records. Here is a *record*, the <group code> and <value> are on their own lines:
 
 [source, text, numbered]
 ----
